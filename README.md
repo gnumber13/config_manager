@@ -1,2 +1,2 @@
 # config_manager
-Maging configs with bash scripts
+Managing configs with bash scripts
