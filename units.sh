@@ -92,7 +92,6 @@ function get_nvim_configs_from_current_machine() {
 function get_konsave_configs_from_current_machine() {
     mkdir -p $config_prefix/.config/
     cp -ur ~/.config/konsave $config_prefix/.config/
-    rm -rf $config_prefix/.config/konsave/*
     delete_dotfiles '$config_prefix/.config/konsave/.*'
 }
 
