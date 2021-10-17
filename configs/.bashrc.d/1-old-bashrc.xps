@@ -211,8 +211,8 @@ alias vimrc='nvim $HOME/.config/nvim/init.vim'
 alias wsensors='watch -n1 sensors'
 alias wsens='watch -n1 sensors'
 alias dl='aria2c'
-alias openports='sudo netstat -tulpn | grep LISTEN'
-alias buster='ssh 192.168.178.36'
+alias openports='sudo ss -nutlp | grep LISTEN'
+alias buster='ssh root@192.168.178.36'
 alias lenny='ssh -D 12789 root@192.46.236.36'
 alias monty='ssh -D 12789 root@192.53.121.91'
 alias jersey='ssh -D 12789 root@45.33.69.151'
@@ -224,6 +224,6 @@ alias vs-cpp="code ~/Dokumente/Code/C++"
 alias wiki="nvim ~/Dokumente/VimWiki/wiki.md"
 alias bashrc="nvim ~/.bashrc.d/1-old-bashrc.xps"
 alias start-pulse="systemctl --user restart pulseaudio"
+alias read-qr="scrot /tmp/qr.png && zbarimg /tmp/qr.png && rm /tmp/qr.png"
 
 ###################################################################
-
