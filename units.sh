@@ -1,5 +1,8 @@
 #!/bin/sh
 
+hostname=$(hostname)
+date_string=$(date +%Y_%m_%d)
+config_prefix=config/"$hostname"_"$date_string"
 
 function get_dist_id() {
     dist_id=$(cat /etc/*-release | uniq -u | grep ^ID= | cut -d"=" -f2)
@@ -80,34 +83,34 @@ function setup_plasma() {
 
 
 function get_nvim_configs_from_current_machine() {
-    cp -ur ~/.config/nvim configs/.config/ 
-    rm -rf configs/.config/nvim/plugged
+    cp -ur ~/.config/nvim $config_prefix/.config/ 
+    rm -rf $config_prefix/.config/nvim/plugged
 }
 
 function get_konsave_configs_from_current_machine() {
-    cp -ur ~/.config/konsave configs/.config/
-    rm -rf configs/.config/konsave/.*
+    cp -ur ~/.config/konsave $config_prefix/.config/
+    rm -rf $config_prefix/.config/konsave/.*
 }
 
 function get_bashrc_configs_from_current_machine() {
-    cp -ur ~/.bashrc.d configs/.
-    rm -rf configs/.bashrc.d/.*
-    cp ~/.bashrc configs/.
+    cp -ur ~/.bashrc.d $config_prefix/.
+    rm -rf $config_prefix/.bashrc.d/.*
+    cp ~/.bashrc $config_prefix/.
 }
 
 function load_konsave_configs_to_current_machine() {
     mkdir -p ~/.config/konsave && echo "creating ~/.config/konsave"
-    cp -ur configs/.config/konsave/* ~/.config/konsave/
+    cp -ur $config_prefix/.config/konsave/* ~/.config/konsave/
 }
 
 function load_nvim_configs_to_current_machine() {
     mkdir -p ~/.config/nvim  && echo "creating ~/.confing/nvim"
-    cp -ur configs/.config/nvim/* ~/.config/nvim/
+    cp -ur $config_prefix/.config/nvim/* ~/.config/nvim/
 }
 
 function load_bashrc_configs_to_current_machine() {
-    cp -ur configs/.bashrc.d ~/
-    cp configs/.bashrc ~/
+    cp -ur $config_prefix/.bashrc.d ~/
+    cp $config_prefix/.bashrc ~/
 }
 
 
