@@ -2,10 +2,8 @@
 
 . ./units.sh
 
-
 OS_DERIVATIVE=$(get_dist_id)
 
-#echo "Select configs to Setup: \n General: 1 \nNeovim: 2\n Plasma: 3\n"
 printf "Select configs to Setup: \n1 General\n2 Neovim\n3 Plasma\n"
 read answer
 
