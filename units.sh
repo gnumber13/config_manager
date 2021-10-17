@@ -4,6 +4,8 @@ hostname=$(hostname)
 date_string=$(date +%Y_%m_%d)
 config_prefix=config/"$hostname"_"$date_string"
 
+
+
 function get_dist_id() {
     dist_id=$(cat /etc/*-release | uniq -u | grep ^ID= | cut -d"=" -f2)
     echo $dist_id
@@ -83,16 +85,19 @@ function setup_plasma() {
 
 
 function get_nvim_configs_from_current_machine() {
+    mkdir -p $config_prefix/.config/
     cp -ur ~/.config/nvim $config_prefix/.config/ 
     rm -rf $config_prefix/.config/nvim/plugged
 }
 
 function get_konsave_configs_from_current_machine() {
+    mkdir -p $config_prefix/.config/
     cp -ur ~/.config/konsave $config_prefix/.config/
     rm -rf $config_prefix/.config/konsave/.*
 }
 
 function get_bashrc_configs_from_current_machine() {
+    mkdir -p $config_prefix/
     cp -ur ~/.bashrc.d $config_prefix/.
     rm -rf $config_prefix/.bashrc.d/.*
     cp ~/.bashrc $config_prefix/.
@@ -111,6 +116,16 @@ function load_nvim_configs_to_current_machine() {
 function load_bashrc_configs_to_current_machine() {
     cp -ur $config_prefix/.bashrc.d ~/
     cp $config_prefix/.bashrc ~/
+}
+
+function display_configs () {
+    configs_list=(config/*)
+    i=1
+    for config in ${configs_list[@]};do
+        config_name=$(echo $config | cut -d'/' -f2)
+        printf "[%d] - %s\n" $i $config_name
+        i=$(($i + 1))
+    done
 }
 
 
