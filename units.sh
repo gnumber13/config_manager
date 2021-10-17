@@ -83,7 +83,6 @@ function setup_plasma() {
     konsave --apply 1
 }
 
-
 function get_nvim_configs_from_current_machine() {
     mkdir -p $config_prefix/.config/
     cp -ur ~/.config/nvim $config_prefix/.config/ 
@@ -93,34 +92,38 @@ function get_nvim_configs_from_current_machine() {
 function get_konsave_configs_from_current_machine() {
     mkdir -p $config_prefix/.config/
     cp -ur ~/.config/konsave $config_prefix/.config/
-    rm -rf $config_prefix/.config/konsave/.*
+    rm -rf $config_prefix/.config/konsave/*
+    delete_dotfiles '$config_prefix/.config/konsave/.*'
 }
 
 function get_bashrc_configs_from_current_machine() {
     mkdir -p $config_prefix/
     cp -ur ~/.bashrc.d $config_prefix/.
-    rm -rf $config_prefix/.bashrc.d/.*
     cp ~/.bashrc $config_prefix/.
+    delete_dotfiles '$config_prefix/.bashrc.d/.*'
 }
 
 function load_konsave_configs_to_current_machine() {
+    selected_config_prefix=$1
     mkdir -p ~/.config/konsave && echo "creating ~/.config/konsave"
-    cp -ur $config_prefix/.config/konsave/* ~/.config/konsave/
+    cp -ur $selected_config_prefix/.config/konsave/* ~/.config/konsave/
 }
 
 function load_nvim_configs_to_current_machine() {
+    selected_config_prefix=$1
     mkdir -p ~/.config/nvim  && echo "creating ~/.confing/nvim"
-    cp -ur $config_prefix/.config/nvim/* ~/.config/nvim/
+    cp -ur $selected_config_prefix/.config/nvim/* ~/.config/nvim/
 }
 
 function load_bashrc_configs_to_current_machine() {
-    cp -ur $config_prefix/.bashrc.d ~/
-    cp $config_prefix/.bashrc ~/
+    selected_config_prefix=$1
+    cp -ur $selected_config_prefix/.bashrc.d ~/
+    cp $selected_config_prefix/.bashrc ~/
 }
 
-function display_configs () {
+function display_presets () {
     configs_list=(config/*)
-    i=1
+    i=0
     for config in ${configs_list[@]};do
         config_name=$(echo $config | cut -d'/' -f2)
         printf "[%d] - %s\n" $i $config_name
@@ -128,5 +131,11 @@ function display_configs () {
     done
 }
 
+function select_preset() {
+    configs_list=(config/*)
+    echo ${configs_list[$1]}
+}
 
-
+function delete_dotfiles() {
+    find -path $1 -delete && echo "deleted $1"
+}
