@@ -1,0 +1,75 @@
+
+################## bashrc according to distro ###################
+
+OS_DERIVATIVE=$(grep ID -m1 /etc/os-release | cut -d'=' -f2)
+
+case $OS_DERIVATIVE in
+
+	'ubuntu'|'pop'|'debian') 		# 'or'|'or'|'or')
+		alias it='sudo apt install'
+		alias up='sudo apt update && sudo apt upgrade'
+		;;
+	'arch'|'manjaro'|'endeavouros')
+		#alias it='sudo pacman -S'
+		alias it='itapp'
+		alias up='sudo pacman -Syu'
+		;;
+	'centos'|'rocky'|'fedora')
+		alias it='sudo dnf install'
+		alias up='sudo dnf update && sudo dnf upgrade'
+		;;
+	*) 					# ever other case
+		;;
+esac
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# colored GCC warnings and errors
+#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+###################################################################
+
+
+#vim shortcuts
+alias svim='sudo nvim'
+#alias vim='nvim'
+alias vimrc='nvim $HOME/.config/nvim/init.vim' 
+
+#system shortcuts
+alias wsensors='watch -n1 sensors'
+alias wsens='watch -n1 sensors'
+alias dl='aria2c'
+alias openports='sudo ss -nutlp | grep LISTEN'
+alias buster='ssh root@192.168.178.36'
+alias lenny='ssh -D 12789 root@192.46.236.36'
+alias monty='ssh -D 12789 root@192.53.121.91'
+alias jersey='ssh -D 12789 root@45.33.69.151'
+alias cl='clear'
+alias arch-releases='w3m https://archlinux.org/releng/releases/ | tail -n +24 | head'
+alias arch-iso="w3m https://archlinux.org/releng/releases/ | tail -n +24 | head | grep -i torrent | head -1 | cut -d' ' -f9"
+alias move-iso="find $HOME/ -type f -name "*.iso" -exec mv '{}' $HOME/.local/iso/. \;"
+alias vs-cpp="code ~/Dokumente/Code/C++"
+alias wiki="nvim ~/Dokumente/VimWiki/wiki.md"
+alias bashrc="nvim ~/.bashrc.d/1-old-bashrc.xps"
+alias start-pulse="systemctl --user restart pulseaudio"
+alias read-qr="scrot /tmp/qr.png && zbarimg /tmp/qr.png && rm /tmp/qr.png"
+alias lsblk="lsblk -f"
+
