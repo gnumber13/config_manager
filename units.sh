@@ -35,21 +35,24 @@ function setup_neovim() {
     OS_DERIVATIVE=$1
     case $OS_DERIVATIVE in
 
-        $(grep $OS_DERIVATIVE apt-list)) 		# 'or'|'or'|'or')
+        #$(grep $OS_DERIVATIVE apt-list)) 		# 'or'|'or'|'or')
+        'ubuntu'|'pop'|'debian'|'Deepin') 		# 'or'|'or'|'or')
             printf "installing nvim and dependencies..."
             nvim --version || sudo apt install neovim -y
             node -v > /dev/null || sudo apt install nodejs -y
             yarn --version > /dev/null || sudo apt install yarn -y
             epiphany-browser --version > /dev/null || sudo apt install epiphany-browser -y
             ;;
-        $(grep $OS_DERIVATIVE pacman-list))
+        #$(grep $OS_DERIVATIVE pacman-list))
+        'arch'|'manjaro'|'endeavouros')
             printf "installing nvim and dependencies..."
             nvim --version || sudo pacman -S neovim -y
             node -v > /dev/null || sudo pacman -S nodejs -y
             yarn --version > /dev/null || sudo pacman -S yarn -y
             epiphany --version > /dev/null || sudo pacman -S epiphany -y
             ;;
-        $(grep $OS_DERIVATIVE dnf-list))
+        #$(grep $OS_DERIVATIVE dnf-list))
+        'centos'|'rocky'|'fedora')
             printf "installing nvim and dependencies..."
             nvim --version || sudo dnf install neovim -y
             node -v > /dev/null || sudo dnf install nodejs -y
