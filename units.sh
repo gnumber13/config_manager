@@ -36,16 +36,22 @@ function setup_neovim() {
     case $OS_DERIVATIVE in
 
         $(grep $OS_DERIVATIVE apt-list)) 		# 'or'|'or'|'or')
+            printf "installing nvim and dependencies..."
+            nvim --version || sudo apt install neovim -y
             node -v > /dev/null || sudo apt install nodejs -y
             yarn --version > /dev/null || sudo apt install yarn -y
             epiphany-browser --version > /dev/null || sudo apt install epiphany-browser -y
             ;;
         $(grep $OS_DERIVATIVE pacman-list))
+            printf "installing nvim and dependencies..."
+            nvim --version || sudo pacman -S neovim -y
             node -v > /dev/null || sudo pacman -S nodejs -y
             yarn --version > /dev/null || sudo pacman -S yarn -y
             epiphany --version > /dev/null || sudo pacman -S epiphany -y
             ;;
         $(grep $OS_DERIVATIVE dnf-list))
+            printf "installing nvim and dependencies..."
+            nvim --version || sudo dnf install neovim -y
             node -v > /dev/null || sudo dnf install nodejs -y
             yarn --version > /dev/null || sudo dnf install nodejs-yarn -y
             epiphany --version > /dev/null || sudo dnf install epiphany -y
@@ -74,13 +80,11 @@ function setup_plasma() {
             ;;
         'centos'|'rocky'|'fedora')
             python -V > /dev/null || sudo dnf install python -y
-            konsave -v > /dev/null || pip install konsave
+            python -m konsave -v > /dev/null || pip install konsave
             ;;
         *) 					# ever other case
             ;;
     esac
-
-    konsave --apply 1
 }
 
 function get_nvim_configs_from_current_machine() {
