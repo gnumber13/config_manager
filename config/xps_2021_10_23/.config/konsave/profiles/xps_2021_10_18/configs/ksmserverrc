@@ -1,0 +1,28 @@
+[$Version]
+update_info=ksmserver_update_loginMode_value.upd:ksmserver_update_loginMode_value_default_enum
+
+[LegacySession: saved at previous logout]
+count=0
+
+[Session: saved at previous logout]
+clientId1=107870730000162464874700000011020006
+clientId2=107870730000162464874700000011020007
+clientId3=107870730000162650932700000011120007
+clientId4=107870730000162911587200000011430008
+count=4
+program1=/usr/bin/pamac-tray-plasma
+program2=/usr/bin/msm_kde_notifier
+program3=/usr/bin/nextcloud
+program4=firefox
+restartCommand1=/usr/bin/pamac-tray-plasma,-session,107870730000162464874700000011020006_1629493607_982094
+restartCommand2=/usr/bin/msm_kde_notifier,-session,107870730000162464874700000011020007_1629493607_982103
+restartCommand3=/usr/bin/nextcloud,-session,107870730000162650932700000011120007_1629493607_982700
+restartCommand4=/usr/lib/firefox/firefox,--sm-client-id,107870730000162911587200000011430008
+restartStyleHint1=0
+restartStyleHint2=0
+restartStyleHint3=0
+restartStyleHint4=0
+userId1=matt
+userId2=matt
+userId3=matt
+userId4=matt

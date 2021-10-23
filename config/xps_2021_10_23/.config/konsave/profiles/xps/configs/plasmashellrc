@@ -1,0 +1,154 @@
+[DownloadDialog Settings]
+eDP1 Height 1080=544
+eDP1 Width 1920=700
+
+[KFileDialog Settings]
+Recent Files[$e]=WhatsApp.svg,file:$HOME/NOTIZEN.png,file:$HOME/.local/share/icons/custom/g3561.png,file:$HOME/.local/share/icons/custom/Zeichnung.svg,file:$HOME/.local/share/icons/custom/g935.png,file:$HOME/.local/share/icons/custom/contacts.svg,file:$HOME/.local/share/icons/custom/qjack_real.svg,file:$HOME/.local/share/icons/custom/qjackctl_logo_new.svg,file:$HOME/Bilder/archlogo_breezeblue.svg,file:$HOME/Downloads/wp4103137-dual-4k-wallpapers.jpg,file:$HOME/Downloads/wp4103153-dual-4k-wallpapers.jpg,file:$HOME/Downloads/wp4103131-dual-4k-wallpapers.png,file:$HOME/.local/share/icons/custom/Discord_logo.svg,file:$HOME/.local/share/icons/custom/WhatsApp_logo.svg,file:$HOME/.local/share/themes/Flatery/apps/64/whatsapp.svg
+Recent URLs[$e]=file:$HOME/.local/share/icons/custom/,file:$HOME/.local/share/themes/Flatery/apps/64/,file:$HOME/.local/share/icons/,file:$HOME/.local/share/,file:$HOME/Downloads/,file:$HOME/Bilder/,file:$HOME/,file:$HOME/Dokumente/,file:$HOME/.local/,file:$HOME/.local/bin/
+detailViewIconSize=16
+listViewIconSize=16
+
+[KPropertiesDialog]
+DP-1 DP-2-3 Height 2560x1440=477
+DP-1 DP-2-3 Width 2560x1440=725
+DP-1 DP-6 Height 2560x1440=457
+DP-1 DP-6 Width 2560x1440=525
+DP2 DP1-3 Height 1440=526
+DP2 DP1-3 Width 2560=1245
+eDP-1 Height 1920x1080=477
+eDP-1 Width 1920x1080=725
+eDP1 Height 1080=525
+eDP1 Height 1920x1080=501
+eDP1 Width 1920=549
+eDP1 Width 1920x1080=670
+
+[PlasmaRunnerManager]
+LaunchCounts=4 services_applications:org.gnome.Terminal.desktop,2 services_applications:welcome.desktop,8 services_applications:discord.desktop,14 services_applications:com.obsproject.Studio.desktop,1 services_applications:kcm_keys.desktop,2 services_applications:geforcenow-electron.desktop,2 services_applications:org.kde.kwrite.desktop,5 services_applications:org.keepassxc.KeePassXC.desktop,2 services_applications:systemsettings.desktop,1 services_applications:kitty.desktop,2 baloosearch,10 services_applications:virt-manager.desktop,3 services_applications:org.kde.kdf.desktop,1 services_applications:net.sourceforge.gscan2pdf.desktop,1 services_applications:droidcam.desktop,1 services_applications:blueman-manager.desktop,4 services_applications:vlc.desktop,3 services_applications:libreoffice-calc.desktop,1 services_applications:microsoft-edge-dev.desktop,2 services_applications:deltachat.desktop,1 services_applications:pcmanfm-qt.desktop,4 services_applications:blender.desktop,3 services_applications:autostart.desktop,3 services_applications:org.kde.kate.desktop,1 services_applications:soundconverter.desktop,1 services_applications:spotify.desktop,1 shell_lutris,1 services_applications:org.kde.kcalc.desktop,4 services_applications:thunderbird.desktop,1 services_applications:org.qbittorrent.qBittorrent.desktop,1 services_applications:teams.desktop,2 services_applications:nemo.desktop,1 services_applications:org.kde.filelight.desktop,4 services_applications:hplip.desktop,14 services_applications:org.gnome.Nautilus.desktop,1 services_applications:org.gnome.Evince.desktop,3 services_applications:notepadqq.desktop,3 services_applications:librewolf.desktop,4 services_applications:org.kde.kcolorchooser.desktop,1 services_applications:kcm_colors.desktop,3 services_applications:org.kde.kamoso.desktop,1 services_applications:pidgin.desktop,1 services_applications:simplescreenrecorder.desktop,4 services_applications:im.dino.Dino.desktop,8 services_applications:org.gnome.Boxes.desktop,1 services_applications:kcm_activities.desktop,1 services_applications:teams.desktop?action=QuitTeams,3 services_applications:com.github.alainm23.planner.desktop,2 services_applications:notable.desktop,1 services_applications:rambox.desktop,1 services_applications:org.kde.yakuake.desktop,2 services_applications:ca.desrt.dconf-editor.desktop,4 services_applications:franz.desktop,1 services_applications:fluffychat.desktop,1 services_applications:org.gnome.Epiphany.WebApp-mywiki-0aa5e4e8519e4701e4e95cd09773afad4f21da0c.desktop,1 recentdocuments_file:///home/matt/Dokumente/tm3form.pdf,1 services_applications:kwalletconfig5.desktop,1 shell_file-roller,1 services_applications:org.kde.neochat.desktop,3 services_applications:appimagekit-joplin.desktop,2 services_applications:org.gnome.Glade.desktop,1 services_applications:libreoffice-base.desktop,5 services_applications:fr.handbrake.ghb.desktop,4 services_applications:keybase.desktop,6 services_applications:org.kde.spectacle.desktop,16 services_applications:firefox.desktop,6 services_applications:org.kde.konsole.desktop,3 services_applications:PBE.QOwnNotes.desktop,1 services_applications:ardour.desktop,1 services_applications:signal-desktop.desktop,2 services_applications:dbeaver.desktop,1 services_applications:com.github.fabiocolacio.marker.desktop,2 recentdocuments_file:///home/matt/Dokumente/essensliste.ods,1 services_applications:vivaldi-stable.desktop,1 services_applications:quiterss.desktop,7 services_applications:tor-browser.desktop,2 services_applications:org.inkscape.Inkscape.desktop,3 services_applications:libreoffice-writer.desktop,2 services_applications:Lightcord.desktop,1 services_applications:VSCodium.desktop,7 services_applications:com.nextcloud.desktopclient.nextcloud.desktop,2 services_applications:org.kde.kwalletmanager5.desktop,1 services_applications:gparted.desktop,4 services_applications:org.kde.ksysguard.desktop,1 services_applications:baka-mplayer.desktop,1 services_applications:whatsapp-for-linux.desktop,1 services_applications:org.gnome.seahorse.Application.desktop,6 services_applications:mailspring.desktop,2 services_applications:chromium.desktop,2 services_applications:Zoom.desktop,4 services_applications:stacer.desktop,5 services_applications:spotify-qt.desktop,1 services_applications:plank.desktop,1 services_applications:jupyter-notebook.desktop,1 services_applications:brave-browser.desktop,7 services_applications:org.gnome.Epiphany.desktop,2 services_applications:bluetooth.desktop,8 services_applications:org.octave.Octave.desktop,2 services_applications:ferdi.desktop,1 services_applications:net.lutris.Lutris.desktop,15 services_applications:steam.desktop,6 services_applications:vscodium.desktop,1 services_applications:org.gnome.Epiphany.WebApp-aur-27cb1d41c47872b496f4af897656125133d34273.desktop,1 services_applications:Zettlr.desktop,7 services_applications:scrcpy.desktop
+
+[PlasmaTransientsConfig]
+PreloadWeight=42
+
+[PlasmaViews][Panel 102][Defaults]
+thickness=34
+
+[PlasmaViews][Panel 102][Horizontal1024]
+thickness=34
+
+[PlasmaViews][Panel 102][Horizontal2560]
+thickness=34
+
+[PlasmaViews][Panel 102][Vertical1440]
+thickness=48
+
+[PlasmaViews][Panel 115][Defaults]
+thickness=36
+
+[PlasmaViews][Panel 115][Horizontal1024]
+thickness=36
+
+[PlasmaViews][Panel 115][Horizontal1920]
+thickness=36
+
+[PlasmaViews][Panel 115][Horizontal2560]
+thickness=36
+
+[PlasmaViews][Panel 135][Defaults]
+thickness=36
+
+[PlasmaViews][Panel 135][Horizontal2560]
+thickness=36
+
+[PlasmaViews][Panel 135][Vertical1440]
+thickness=36
+
+[PlasmaViews][Panel 2][Defaults]
+maxLength=2560
+minLength=2560
+thickness=40
+
+[PlasmaViews][Panel 2][Horizontal1920]
+minLength=1920
+thickness=40
+
+[PlasmaViews][Panel 2][Horizontal2560]
+maxLength=2560
+minLength=2560
+thickness=42
+
+[PlasmaViews][Panel 2][Horizontal640]
+thickness=46
+
+[PlasmaViews][Panel 28][Defaults]
+thickness=34
+
+[PlasmaViews][Panel 28][Horizontal1920]
+thickness=34
+
+[PlasmaViews][Panel 28][Horizontal2560]
+thickness=34
+
+[PlasmaViews][Panel 28][Horizontal640]
+thickness=34
+
+[PlasmaViews][Panel 48][Defaults]
+thickness=36
+
+[PlasmaViews][Panel 48][Vertical1440]
+thickness=36
+
+[PlasmaViews][Panel 48][Vertical2560]
+thickness=36
+
+[PlasmaViews][Panel 77][Defaults]
+maxLength=75
+minLength=75
+thickness=48
+
+[PlasmaViews][Panel 77][Horizontal2560]
+maxLength=75
+minLength=75
+thickness=48
+
+[PlasmaViews][Panel 77][Vertical1440]
+thickness=36
+
+[PlasmaViews][Panel 94][Defaults]
+thickness=34
+
+[PlasmaViews][Panel 94][Horizontal1920]
+thickness=34
+
+[PlasmaViews][Panel 94][Horizontal2560]
+thickness=34
+
+[PlasmaViews][Panel 94][Vertical1440]
+thickness=48
+
+[PlasmaViews][Panel 98][Defaults]
+thickness=36
+
+[PlasmaViews][Panel 98][Horizontal2560]
+thickness=36
+
+[PlasmaViews][Panel 98][Vertical1440]
+thickness=48
+
+[ScreenConnectors]
+0=eDP-1
+1=DP2-1
+10=DP-1-1-3
+11=DP-2-3
+12=DP1-3
+13=DP-1-2
+14=DP-4
+15=DP-1-3
+2=:0.0
+3=:1.0
+4=DP2-3
+5=DP2
+6=DP1-1
+7=DP1
+9=DP-3
+
+[Updates]
+performed=/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/move_desktop_layout_config.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/obsolete_kickoffrc.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/unlock_widgets.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/maintain_existing_desktop_icon_sizes.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/containmentactions_middlebutton.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/systemloadviewer_systemmonitor.js
