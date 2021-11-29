@@ -1,10 +1,6 @@
 #!/bin/sh
 
-hostname=$(hostname)
-date_string=$(date +%Y_%m_%d)
-config_prefix=config/"$hostname"_"$date_string"
-
-
+. ./config.sh
 
 function get_dist_id() {
     dist_id=$(cat /etc/*-release | uniq -u | grep ^ID= | cut -d"=" -f2)
@@ -14,7 +10,6 @@ function get_dist_id() {
 function setup_general() {
     OS_DERIVATIVE=$1
     case $OS_DERIVATIVE in
-
         'ubuntu'|'pop'|'debian'|'Deepin') 		# 'or'|'or'|'or')
             firefox -v > /dev/null || sudo apt install firefox -y
             ;;
@@ -35,7 +30,6 @@ function setup_neovim() {
     OS_DERIVATIVE=$1
     case $OS_DERIVATIVE in
 
-        #$(grep $OS_DERIVATIVE apt-list)) 		# 'or'|'or'|'or')
         'ubuntu'|'pop'|'debian'|'Deepin') 		# 'or'|'or'|'or')
             printf "installing nvim and dependencies..."
             nvim --version || sudo apt install neovim -y
@@ -43,7 +37,6 @@ function setup_neovim() {
             yarn --version > /dev/null || sudo apt install yarn -y
             epiphany-browser --version > /dev/null || sudo apt install epiphany-browser -y
             ;;
-        #$(grep $OS_DERIVATIVE pacman-list))
         'arch'|'manjaro'|'endeavouros')
             printf "installing nvim and dependencies..."
             nvim --version || sudo pacman -S neovim -y
@@ -51,7 +44,6 @@ function setup_neovim() {
             yarn --version > /dev/null || sudo pacman -S yarn -y
             epiphany --version > /dev/null || sudo pacman -S epiphany -y
             ;;
-        #$(grep $OS_DERIVATIVE dnf-list))
         'centos'|'rocky'|'fedora')
             printf "installing nvim and dependencies..."
             nvim --version || sudo dnf install neovim -y
@@ -90,6 +82,26 @@ function setup_plasma() {
     esac
 }
 
+function check_valid_input() {
+    answer="$1"
+    [[ $answer == *1* ]] || \
+    [[ $answer == *2* ]] || \
+    [[ $answer == *3* ]]
+}
+
+function is_number() {
+    input=$1
+    [ $input -eq $input ]
+}
+
+## getting configs
+
+function get_selected_configs() {
+    answer=$1
+    echo $answer | grep -q "1" && echo "contains 1" && get_bashrc_configs_from_current_machine
+    echo $answer | grep -q "2" && echo "contains 2" && get_nvim_configs_from_current_machine
+    echo $answer | grep -q "3" && echo "contains 3" && get_konsave_configs_from_current_machine
+}
 function get_nvim_configs_from_current_machine() {
     mkdir -p $config_prefix/.config/
     cp -ur ~/.config/nvim $config_prefix/.config/ 
@@ -107,6 +119,29 @@ function get_bashrc_configs_from_current_machine() {
     cp -ur ~/.bashrc.d $config_prefix/.
     cp ~/.bashrc $config_prefix/.
     delete_dotfiles '$config_prefix/.bashrc.d/.*'
+}
+
+function check_valid_config_selection() {
+    config_index=$1
+    list_length=$2
+    [ $config_index -ge 0 ] && \
+    [ $(is_number $config_index) ] && \ 
+    [ $config_index -lt $list_length ] && \
+    echo true
+}
+
+## loading configs
+function load_selected_configs_to_current_machine() {
+    answer=$1
+    selected_config=$2
+    echo $answer | grep -q "1" && echo "contains 1" && \
+        load_bashrc_configs_to_current_machine $selected_config
+
+    echo $answer | grep -q "2" && echo "contains 2" && \
+        load_nvim_configs_to_current_machine $selected_config
+
+    echo $answer | grep -q "3" && echo "contains 3" && \
+        load_konsave_configs_to_current_machine $selected_config
 }
 
 function load_konsave_configs_to_current_machine() {
@@ -127,6 +162,8 @@ function load_bashrc_configs_to_current_machine() {
     cp $selected_config_prefix/.bashrc ~/
 }
 
+
+## presets
 function display_presets () {
     configs_list=(config/*)
     i=0
