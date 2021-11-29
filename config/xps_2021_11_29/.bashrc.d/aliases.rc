@@ -8,6 +8,7 @@ alias SS='sudo systemctl'
 alias dl='aria2c'
 alias cl='clear'
 alias ..='cd ..'
+alias up-rc='source ~/.bashrc'
 
 ## ls options
 alias lss='ls -sShAr'
