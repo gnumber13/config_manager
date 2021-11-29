@@ -7,7 +7,7 @@ list_length=${#configs_list[@]}
 printf "Select configs to Setup: \n1 General\n2 Neovim\n3 Plasma\n"
 read answer
 
-check_valid_input "$answer" || exit
+check_valid_input $answer || exit
 
 display_presets
 for i in {1..3}; do
@@ -27,4 +27,4 @@ selected_config=$(select_preset $config_index)
 
 echo $selected_config
 
-#load_selected_configs_to_current_machine $answer $selected_config
+load_selected_configs_to_current_machine $answer $selected_config

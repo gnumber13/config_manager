@@ -13,8 +13,10 @@ alias ..='cd ..'
 alias lss='ls -sShAr'
 alias ll='ls -alF'
 alias la='ls -A'
+alias li='ls --ignore=LICENSE --ignore=README.md --ignore=Makefile'
 alias l='ls -CF'
-
+alias lsi='printf "\n" && lsd -XF --ignore-glob=LICENSE --ignore-glob=README.md --ignore-glob=Makefile && printf "\n"'
+    
 ## make
 alias mt='make test'
 alias me='make exec'

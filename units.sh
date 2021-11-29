@@ -134,6 +134,7 @@ function check_valid_config_selection() {
 function load_selected_configs_to_current_machine() {
     answer=$1
     selected_config=$2
+
     echo $answer | grep -q "1" && echo "contains 1" && \
         load_bashrc_configs_to_current_machine $selected_config
 
