@@ -1,0 +1,65 @@
+# sourced by ~/.bashrc
+
+# system shortcuts
+## simple
+alias e='nvim'
+alias se='sudo nvim'
+alias SS='sudo systemctl'
+alias dl='aria2c'
+alias cl='clear'
+alias ..='cd ..'
+
+## ls options
+alias lss='ls -sShAr'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+## make
+alias mt='make test'
+alias me='make exec'
+alias ma='make all'
+alias mc='make clean'
+
+## git
+alias gl='git log'
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit -m'
+
+## full commands
+alias qr-screen-scan='scrot /tmp/qr.png && zbarimg /tmp/qr.png && rm /tmp/qr.png'
+alias codedir="cd $CODEDIR" #config in ~/.profile
+alias wsens='watch -n1 sensors'
+alias openports='sudo ss -nutlp | grep LISTEN'
+alias wiki="nvim ~/Dokumente/VimWiki/wiki.md"
+
+## configs
+alias vimrc='nvim ~/.config/nvim/init.vim'
+alias bashrc="$EDITOR ~/.bashrc" #confg in ~/.profile
+
+## overwrites
+alias ls='ls --color=auto'
+alias lsblk='lsblk -f'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+
+# server
+alias buster='ssh root@192.168.178.36'
+alias lama='ssh root@172.105.93.59'
+
+
+
+
+
+
+
+
+
+## keep or sweep
+alias start-pulse="sudo systemctl --user restart pulseaudio"
+alias arch-releases='w3m https://archlinux.org/releng/releases/ | tail -n +24 | head'
+alias arch-iso="w3m https://archlinux.org/releng/releases/ | tail -n +24 | head | grep -i torrent | head -1 | cut -d' ' -f9"
+alias move-isos="find $HOME/ -type f -name "*.iso" -exec mv '{}' $HOME/.local/iso/. \;"
